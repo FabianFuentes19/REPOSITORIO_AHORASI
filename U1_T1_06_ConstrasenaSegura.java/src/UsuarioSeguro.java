@@ -2,7 +2,7 @@ public class UsuarioSeguro {
 
     
     private String nombreUsuario;
-    private  string password;
+    private  String password;
 
     public String getNombreUsuario(){
         return nombreUsuario;
@@ -17,23 +17,29 @@ public class UsuarioSeguro {
         }
     }
     
-    public string getPassword(){
+    public String getPassword(){
         return password;
     }
 
-    public string setPassword(string password){
+    public String setPassword(String password){
 
 
-        if(password.lenght < 8){
+        if(password.length() < 8){
 
             System.out.println("la contrasena debe tener al menos 8 caracteres");
 
         }
-        if(!(password.UpperCase() && password.UpperCase() && password.Digit())){
- 
-            System.out.println("la contrasena debe contener una mayuscula, una minuscula y un numero");
-
-        }
+boolean hasUpper = false;
+boolean hasLower = false;
+boolean hasDigit = false;
+for (char c : password.toCharArray()) {
+    if (Character.isUpperCase(c)) hasUpper = true;
+    if (Character.isLowerCase(c)) hasLower = true;
+    if (Character.isDigit(c)) hasDigit = true;
+}
+if (!(hasUpper && hasLower && hasDigit)) {
+    System.out.println("la contrasena debe contener una mayuscula, una minuscula y un numero");
+}
         return this.password = password;
 
     }
@@ -41,9 +47,9 @@ public class UsuarioSeguro {
        public boolean autenticar(String intentPassword) {
         return password != null && password.equals(intentPassword);
     }
-    public UsuarioSeguro(String nombreUsuario, string password) {
+    public UsuarioSeguro(String nombreUsuario, String password2) {
         setNombreUsuario(nombreUsuario);
-        setPassword(password);
+        setPassword(password2);
     }
      
 }

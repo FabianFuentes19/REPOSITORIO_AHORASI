@@ -3,12 +3,12 @@ public class string {
 
     public int lenght;
 
-    public boolean UpperCase() {
+    public static boolean UpperCase() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'UpperCase'");
     }
 
-    public boolean Digit() {
+    public static boolean Digit() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'Digit'");
     }
