@@ -38,8 +38,12 @@ public class UsuarioSeguro {
 
     }
 
-
-
-    
-    
+       public boolean autenticar(String intentPassword) {
+        return password != null && password.equals(intentPassword);
+    }
+    public UsuarioSeguro(String nombreUsuario, string password) {
+        setNombreUsuario(nombreUsuario);
+        setPassword(password);
+    }
+     
 }
