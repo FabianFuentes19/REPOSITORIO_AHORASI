@@ -19,9 +19,9 @@ public class App {
         String intento = sc.nextLine();
 
         if (usuario.autenticar(intento)) {
-            System.out.println("Autenticación exitosa.");
+            System.out.println("acceso concedido.");
         } else {
-            System.out.println("Autenticación fallida.");
+            System.out.println("acceso denegado.");
         }
         sc.close();
     }
