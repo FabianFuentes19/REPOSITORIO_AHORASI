@@ -20,28 +20,40 @@ public class UsuarioSeguro {
     public String getPassword(){
         return password;
     }
+    public void setPassword(String password) {
+     
+        if (password.length() < 8) {
+            System.out.println("La contrasena debe tener al menos 8 caracteres.");
+            return;
 
-    public String setPassword(String password){
-
-
-        if(password.length() < 8){
-
-            System.out.println("la contrasena debe tener al menos 8 caracteres");
-
+            
         }
-boolean hasUpper = false;
-boolean hasLower = false;
-boolean hasDigit = false;
-for (char c : password.toCharArray()) {
-    if (Character.isUpperCase(c)) hasUpper = true;
-    if (Character.isLowerCase(c)) hasLower = true;
-    if (Character.isDigit(c)) hasDigit = true;
-}
-if (!(hasUpper && hasLower && hasDigit)) {
-    System.out.println("la contrasena debe contener una mayuscula, una minuscula y un numero");
-}
-        return this.password = password;
 
+        boolean mayuscula = false;
+        boolean minuscula = false;
+        boolean digito = false;
+
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (c >= 'A' && c <= 'Z') mayuscula = true;
+            if (c >= 'a' && c <= 'z') minuscula = true;
+            if (c >= '0' && c <= '9') digito = true;
+        }
+
+        if (!mayuscula) {
+            System.out.println("La contrasena debe contener al menos una letra mayuscula.");
+            return;
+        }
+        if (!minuscula) {
+            System.out.println("La contrasena debe contener al menos una letra minuscula.");
+            return;
+        }
+        if (!digito) {
+            System.out.println("La contrasena debe contener al menos un digito.");
+            return;
+        }
+
+        this.password = password;
     }
 
        public boolean autenticar(String intentPassword) {

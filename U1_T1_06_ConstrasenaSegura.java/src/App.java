@@ -19,17 +19,10 @@ public class App {
         String intento = sc.nextLine();
 
         if (usuario.autenticar(intento)) {
-            System.out.println("Acceso concedido");
+            System.out.println("Autenticación exitosa.");
         } else {
-            System.out.println("Acceso denegado");
+            System.out.println("Autenticación fallida.");
         }
-
-        if (usuario.autenticar("contrasenaIncorrecta")) {
-            System.out.println("Acceso concedido");
-        } else {
-            System.out.println("Acceso denegado");
-        }
-
         sc.close();
     }
 }
