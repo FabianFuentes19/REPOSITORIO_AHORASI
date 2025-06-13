@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -43,9 +44,33 @@ public class HelloApplication extends Application {
         grid.add(comboBox, 1, 3);
         grid.add(btncrear, 1, 4);
         grid.add(btnreset, 2, 4);
+        grid.add(resultado, 1, 5);
 
+        btncrear.setOnAction(e -> {
+                String valorNombre = nombre.getText();
+                String valorApellido = apellido.getText();
+                String valorEdad = edad.getText();
+                String rol = comboBox.getValue();
 
+                if (!valorNombre.isEmpty() && !valorApellido.isEmpty() && !valorEdad.isEmpty() && rol != null) {
+                    grid.setStyle("-fx-background-color: lightgreen;");
+                    resultado.setStyle("-fx-background-color: lightblue;");
+                    resultado.setText("Nombre: " + valorNombre + " " + valorApellido + ", Edad: " + valorEdad + ", Rol: " + rol);
+                } else {
+                    resultado.setStyle("-fx-background-color: pink;");
+                    resultado.setText("Por favor llena todos los campos.");
+                }
+            });
 
+        btnreset.setOnAction(e -> {
+            nombre.setText("");
+            apellido.setText("");
+            edad.setText("");
+            comboBox.setValue("");
+            resultado.setText("");
+        });
+        Image image = new Image(getClass().getResourceAsStream("/imagenes/sitio-web.png"));
+        stage.getIcons().add(image);
 
 
         Scene scene = new Scene(grid, 500, 240);
