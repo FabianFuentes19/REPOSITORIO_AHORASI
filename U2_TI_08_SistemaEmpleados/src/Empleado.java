@@ -29,5 +29,5 @@ public abstract class Empleado {
     public void setSalarioBase(double salarioBase) {
         this.salarioBase = salarioBase;
     }
-    
+
 }
