@@ -6,9 +6,6 @@ public class EmpleadoTiempoCompleto extends Empleado{
         this.beneficios = beneficios;
     }
 
-
-
-
     @Override
     public double calcularSalario() {
         return getSalarioBase();
