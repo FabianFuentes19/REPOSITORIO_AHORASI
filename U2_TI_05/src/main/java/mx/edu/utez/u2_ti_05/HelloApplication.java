@@ -57,12 +57,14 @@ public class HelloApplication extends Application {
                     resultado.setStyle("-fx-background-color: lightblue;");
                     resultado.setText("Nombre: " + valorNombre + " " + valorApellido + ", Edad: " + valorEdad + ", Rol: " + rol);
                 } else {
+                    grid.setStyle("-fx-background-color: #ffffff;");
                     resultado.setStyle("-fx-background-color: pink;");
                     resultado.setText("Por favor llena todos los campos.");
                 }
             });
 
         btnreset.setOnAction(e -> {
+            grid.setStyle("-fx-background-color: #ffffff;");
             nombre.setText("");
             apellido.setText("");
             edad.setText("");
