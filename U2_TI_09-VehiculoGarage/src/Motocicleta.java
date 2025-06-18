@@ -1,6 +1,6 @@
 public class Motocicleta extends Vehiculo {
 
-    private boolean tieneCaja;
+    private boolean tieneCaja=true;
 
     public Motocicleta(String marca, String placa, boolean tieneCaja) {
         super(marca, placa);
